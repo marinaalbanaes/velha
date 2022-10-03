@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .casa{
+            width: 90px;
+            height: 90px;
+            position: relative;
+            font-size: 50px;
+        }
+        .casa:hover{
+            top: -2px;
+            box-shadow: 0 2px 2px rgb(24, 213, 226);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <h3 class="text-center text-info">
+                    VELHA DOS DEXTERS 👵👩‍💻
+                </h3>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <table class="table">
+                            <tbody style="text-align: center;">
+                                <tr class="table-info">
+                                    <td>
+                                        <button class="casa" id="00" onclick="f00()"></button>
+                                    </td>
+                                    <td>
+                                        <button class="casa" id="01" onclick="f01()"></button>
+                                    </td>
+                                    <td>
+                                        <button class="casa" id="02" onclick="f02()"></button>
+                                    </td>
+                                </tr>
+                                <tr class="table-info">
+                                    <td>
+                                        <button class="casa" id="10" onclick="f10()"></button>
+                                    </td>
+                                    <td>
+                                        <button class="casa" id="11" onclick="f11()"></button>
+                                    </td>
+                                    <td>
+                                        <button class="casa" id="12" onclick="f12()"></button>
+                                    </td>
+                                </tr>
+                                <tr class="table-info">
+                                    <td>
+                                        <button class="casa" id="20" onclick="f20()"></button>
+                                    </td>
+                                    <td>
+                                        <button class="casa" id="21" onclick="f21()"></button>
+                                    </td>
+                                    <td>
+                                        <button class="casa" id="22" onclick="f22()"></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <center>
+    <button>REINICIAR</button>
+    </center>
+</body>
+
+</html>
+
+<script>
+    let ultima = "X"
+    let velha = [["a","b","c"],["d","e","f"],["g","h","i"]]
+
+    function verifica(){
+        if(ultima == "X"){
+            ultima = "O"
+        }
+        else{
+            ultima = "X"
+        }
+    }
+
+    function f00(){
+        verifica()
+        velha [0][0] = ultima
+        var botao = document.getElementById("00")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f01(){
+        verifica()
+        velha [0][1] = ultima
+        var botao = document.getElementById("01")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f02(){
+        verifica()
+        velha [0][2] = ultima
+        var botao = document.getElementById("02")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f10(){
+        verifica()
+        velha [1][0] = ultima
+        var botao = document.getElementById("10")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f11(){
+        verifica()
+        velha [1][1] = ultima
+        var botao = document.getElementById("11")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f12(){
+        verifica()
+        velha [1][2] = ultima
+        var botao = document.getElementById("12")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f20(){
+        verifica()
+        velha [2][0] = ultima
+        var botao = document.getElementById("20")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f21(){
+        verifica()
+        velha [2][1] = ultima
+        var botao = document.getElementById("21")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+    function f22(){
+        verifica() 
+        velha [2][2] = ultima
+        var botao = document.getElementById("22")
+        botao.innerHTML = ultima
+        botao.disabled = true
+        botao.style.backgroundColor = "lightblue"
+        botao.style.color = "black"
+        vencedor() 
+    }
+
+    function vencedor(){
+        if(velha[0][0] == velha[0][1] && velha[0][1] == velha[0][2]){
+            alert(velha[0][0] + " Venceu!")
+        }
+        else if(velha[0][0] == velha[1][0] && velha[1][0] == velha[2][0]){
+            alert(velha[0][0] + " Venceu!")
+        }
+        else if(velha[0][0] == velha[1][1] && velha[1][1] == velha[2][2]){
+            alert(velha[0][0] + " Venceu!")
+        }
+        else if(velha[0][1] == velha[1][1] && velha[1][1] == velha[2][1]){
+            alert(velha[0][1] + " Venceu!")
+        }
+        else if(velha[0][2] == velha[1][2] && velha[1][2] == velha[2][2]){
+            alert(velha[0][2] + " Venceu!")
+        }
+        else if(velha[1][0] == velha[1][1] && velha[1][1] == velha[1][2]){
+            alert(velha[1][0] + " Venceu!")
+        }
+        else if(velha[2][0] == velha[2][1] && velha[1][1] == velha[2][2]){
+            alert(velha[2][0] + " Venceu!")
+        }
+        else if(velha[2][0] == velha[1][1] && velha[1][1] == velha[0][2]){
+            alert(velha[2][0] + " Venceu!")
+        }
+    }
+</script>

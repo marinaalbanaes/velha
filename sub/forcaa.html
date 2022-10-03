@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <br>
+        <h1>FORCA DOS DEXTERS👩‍💻❤</h1><br>
+        <input id="palavra" type="text" placeholder="Digite a palavra">&nbsp;<button onclick="transforma()">LET'S BORA</button><br><br>
+        <input id="chute" type="text" placeholder="Digite uma letra">&nbsp;<button onclick="chute()">CHUTAR</button><br><br>
+        <div id="div1"></div>
+        <h1 id="letras"></h1>
+    </center>
+</body>
+
+</html>
+<script>
+    function transforma(){
+        var palavra = document.getElementById("palavra").value
+        var array = palavra.split('') // .split = lista
+        var resposta = ""
+        //alert(array)
+        for(var pos = 0; pos < array.length; pos++){
+            resposta += " _ "
+        }
+        document.getElementById("letras").innerHTML = resposta
+        document.getElementById("palavra").value = null
+    }
+
+    function chute(){
+
+    }
+</script>
